@@ -4,10 +4,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/upload-artifact@v2
-        with:
-          name: appbundle
-          path: build/app/outputs/bundle/release/app-release.aab
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
@@ -24,6 +20,9 @@ jobs:
       - run: flutter build apk --dart-define=key=minha_key_apk
       - run: flutter build appbundle --dart-define=key=minha_key_appbundle
 
-      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: appbundle
+          path: build/app/outputs/bundle/release/app-release.aab      
 
 

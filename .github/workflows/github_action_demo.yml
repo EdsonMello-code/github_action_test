@@ -17,8 +17,9 @@ jobs:
 
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter build apk
-      - run: flutter build appbundle
+      - run: flutter build apk --dart-define=key=minha_key_apk
+      - run: flutter build appbundle --dart-define=key=minha_key_appbundle
+
       
 
 
